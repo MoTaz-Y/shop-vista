@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="icon" href="../images/logoo.jpeg" />
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="css/cart.css" />
+    <script>
+      if (!localStorage.getItem("currentUser")) {
+        window.location.replace("../index.html");
+      } else {
+        let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+        if (currentUser.role == "admin") {
+          window.location.replace("../Admin/admin.html");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- NvBar -->
+    <nav class="navbar fixed-top navbar-expand-lg" id="navBar">
+      <div class="container-fluid ms-4">
+        <a class="navbar-brand" href="../index.html">
+          <img
+            src="../images/logoo.jpeg"
+            alt="ShopVistaLogo"
+            style="width: 60px; height: 60px"
+            class="rounded-3 me-2"
+          />
+          ShopVista
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto me-5 mb-2 mb-lg-0 text-center">
+            <li class="nav-item mx-1" id="sellerDashboard"></li>
+            <li class="nav-item mx-1">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item mx-1">
+              <a class="nav-link" href="../Shop/shop.html">Shop</a>
+            </li>
+            <li class="nav-item mx-1">
+              <a class="nav-link" href="../Orders/orders.html">Orders</a>
+            </li>
+            <li class="nav-item mx-1">
+              <a
+                class="nav-link position-relative active"
+                href="../Cart/cart.html"
+              >
+                <i class="fa-solid fa-cart-shopping fa-lg"></i>
+                <span
+                  id="cart"
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                ></span>
+              </a>
+            </li>
+            <li class="nav-item mx-1">
+              <a class="nav-link" href="../Profile/profile.html">
+                <i class="fa-solid fa-user"></i>
+              </a>
+            </li>
+            <li class="nav-item mx-1">
+              <button class="nav-link w-100" onclick="logout()">
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Modal for product details -->
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-1 fw-bolder" id="staticBackdropLabel">
+              Modal title
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div
+                class="row gx-5 flex-md-row-reverse flex-column"
+                id="modalBody"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Display Cart Products -->
+    <div class="container py-5 my-5">
+      <div
+        id="cartdHeader"
+        class="d-flex align-items-center justify-content-between"
+      >
+        <div class="left">
+          <h2>Shop Cart :</h2>
+          <p id="totalPrice"></p>
+        </div>
+        <div class="right">
+          <button id="confirmPaymentButton" class="btn">
+            <a href="../CheckOut/checkout.html">Confirm Payment</a>
+          </button>
+        </div>
+      </div>
+      <div id="cartBody"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footerContainer p-3 text-center">
+      <div>
+        <div class="text-center my-2 py-3">
+          <h2 class="fs-2">ShopVista</h2>
+        </div>
+
+        <div
+          class="d-flex align-items-center justify-content-center gap-4 flex-column flex-sm-row"
+        >
+          <a href="../index.html" class="">Home</a>
+          <a href="../About/about.html" class="">About</a>
+          <a href="../Contact/contact.html" class="">Contact</a>
+          <a href="#" class="">Privacy & Policy</a>
+          <a href="#" class="">Terms of Service</a>
+        </div>
+
+        <div
+          class="socialContainer my-4 d-flex align-items-center justify-content-center gap-3"
+        >
+          <a href="https://www.facebook.com/mohammed.omran.1466" target="_blank"
+            ><i class="fa-brands fa-facebook-f fs-4"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/mohammedomran95/"
+            target="_blank"
+          >
+            <i class="fa-brands fa-linkedin fs-4"></i>
+          </a>
+          <a href="https://x.com/M__Omran" target="_blank">
+            <i class="fa-brands fa-x-twitter fs-4"></i>
+          </a>
+          <a href="https://www.youtube.com/" target="_blank">
+            <i class="fa-brands fa-youtube fs-4"></i>
+          </a>
+        </div>
+        <div class="copyRights text-center my-3">
+          <p>Copyright&copy 2024 All rights reserved</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
+</html>

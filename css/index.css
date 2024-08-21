@@ -1,0 +1,206 @@
+/* General */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: teal;
+  font-weight: bolder;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* NavBar */
+#navBar {
+  background-color: teal;
+  color: white;
+}
+
+#navBar .nav-link,
+#navBar .navbar-brand {
+  color: white;
+  margin-top: 2px;
+}
+
+#navBar .nav-link.active,
+#navBar .nav-link.active i {
+  color: teal;
+  background-color: white;
+  border-radius: 6px;
+}
+
+#navBar .nav-link:focus,
+#navBar .nav-link:active {
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: inherit;
+}
+
+#navBar .nav-link:hover {
+  color: teal;
+  background-color: white;
+  border-radius: 5px;
+}
+#navBar .navbar-toggler {
+  border-color: white;
+  color: white;
+}
+#navBar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+/* Card */
+.container .row .card,
+#ordersBody .card-order {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  border: teal 1px solid;
+  cursor: pointer;
+}
+.container .row .card {
+  min-height: 450px;
+}
+.container .row .card:hover,
+#ordersBody .card-order:hover {
+  transform: translateY(-10px);
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  -o-transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 128, 128, 0.6);
+}
+
+/* Buttons */
+.btn {
+  background-color: teal;
+  color: white;
+}
+
+.btn:hover {
+  color: white;
+  background-color: rgb(0, 128, 128, 0.7);
+}
+
+.delete-btn,
+.delete-btn-user {
+  background-color: #dc3545;
+}
+.delete-btn:hover,
+.delete-btn-user:hover {
+  background-color: rgb(220, 53, 69, 0.8);
+}
+
+.btn-danger,
+.reject-btn {
+  background-color: #dc3545;
+  color: white;
+}
+.btn-outline-success {
+  background-color: white;
+  color: #157347;
+  border-color: #157347;
+}
+
+.btn-danger:hover,
+.reject-btn:hover {
+  background-color: rgb(220, 53, 69, 0.8);
+}
+
+/* Footer */
+.footerContainer {
+  background-color: #2b3035;
+  color: #fdfdfd;
+}
+
+.footerContainer i {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.footerContainer .fa-facebook-f:hover {
+  color: #0866ff;
+}
+.footerContainer .fa-youtube:hover {
+  color: red;
+}
+.footerContainer .fa-linkedin:hover {
+  color: #0a66c2;
+}
+.footerContainer .fa-x-twitter:hover {
+  color: black;
+}
+
+/* Rest of page */
+#price,
+#priceAfter {
+  color: tomato;
+  font-weight: bold;
+}
+
+#priceBefore {
+  color: #000;
+  font-weight: bold;
+}
+
+/* Rating */
+.fa-star {
+  color: goldenrod;
+}
+
+/* Cart style */
+#cart {
+  font-size: 0.75rem;
+  padding: 0.25em 0.5em;
+  transform: translate(-50%, -50%);
+}
+
+/* selection */
+::selection {
+  color: white;
+  background-color: tomato;
+}
+
+/* Nav and Tabs */
+.nav-link {
+  color: teal;
+}
+.nav-link:hover {
+  color: rgb(0, 128, 128, 0.8);
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  color: rgb(25, 220, 220);
+}
+
+/* tables */
+table td,
+table th {
+  text-align: center;
+}
+
+.input-group-text {
+  width: 2.6rem;
+}
+
+td img {
+  width: 50px;
+}
+
+/* Seller dashboard */
+#pendingProducts-tab-pane {
+  min-height: 25vh;
+}
